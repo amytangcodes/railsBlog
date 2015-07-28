@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   get 'articles/edit'
 
-  resources :articles
+  resources :articles do
+    resources :comments
+  end  
   # get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
