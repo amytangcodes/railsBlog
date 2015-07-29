@@ -1,3 +1,82 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	font-family: 'Cabin', sans-serif;
+	// letter-spacing: 2px;
+	font-size: 14px;
+	background: #EEEEEE;
+	color: #3e5870;
+}
+
+a {
+	text-decoration: none;
+	color: #2c3e50;
+	&:hover {
+		color: #34495e;
+		text-decoration: underline;
+	}	
+}
+
+h1, 
+h3 {
+	font-family: 'Playfair Display', serif;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-style: italic;
+}
+
+h3 {
+	margin: 0;
+}
+
+header {
+	// width: 70%;
+	margin: 0 auto;
+	h1 {
+		width: 100px;
+	}
+}
+.wrapper {
+	width: 70%;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
+.newPost a {
+	font-style: italic;
+	display: block;
+	margin: 20px 0;
+	text-align: right;
+}
+
+.blogButtons {
+	// margin: 0;
+	padding: 0;
+	ul {
+
+	}
+	li {
+		display: inline;	
+		list-style: none;
+
+	}
+	a {
+		padding: 5px 10px;
+		color: black;
+		background: #f1c40f;
+		border-radius: 2px;
+		margin: 15px 2px;
+		&:hover {
+			background: #f39c12;
+		}
+	}
+}
+
+.blog {
+	margin: 20px auto;
+	background: white;
+	padding: 25px;
+}
+

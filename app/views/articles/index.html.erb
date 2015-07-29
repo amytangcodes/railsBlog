@@ -1,23 +1,29 @@
-<h1>Listing articles</h1>
- <%= link_to 'New article', new_article_path %>
+<main>
+  <section class="wrapper">
+    <header>
+      <h1>Seinfeld Crew Thoughts</h1>
+      <h2>First blog site made with Ruby on Rails</h2>
+    </header>  
+    <div class="newPost"><%= link_to 'Write a new post', new_article_path %></div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th colspan="2"></th>
-  </tr>
+
+    <% @articles.each do |article| %> 
+      <section class="blog">
+        <h2 class="subtitle"><%= link_to article.title, article_path(article) %></h2>
+        <p><%= article.text %></p>
+
+        <ul class="blogButtons">
+          <li class="blogButton"><%= link_to 'Show', article_path(article) %></li>
+          <li class="blogButton"><%= link_to 'Edit', edit_article_path(article) %></li>
+          <li class="blogButton"><%= link_to 'Destroy', article_path(article), 
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %></li>
+        </ul>    
+      </section><!-- End of blog  --> 
+    <% end %>
+  </section><!-- End of wrapper -->
+</main>  
  
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %>
-      </td>
-      <td><%= link_to 'Destroy', article_path(article), 
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
+
+
+

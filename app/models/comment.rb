@@ -1,3 +1,4 @@
 class Comment < ActiveRecord::Base
-  belongs_to :article
+	# The other side to the relationship is that comments will always belong to a specific article.
+  	belongs_to :article
 end
